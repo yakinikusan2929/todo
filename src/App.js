@@ -30,12 +30,14 @@ function App() {
   }
 
   return <div>
-    <Todolist todos={todos} toggleTodo={toggleTodo} />
+
+    <div>登録個数:{todos.filter((todo) => !todo.completed).length}
+    </div>
     <input placeholder="商品名" type="text" ref={todoNameRef} />
     <button onClick={handleAddTodo}>追加</button>
     <button onClick={handleCler}>削除</button><br />
-    <div>登録個数:{todos.filter((todo) => !todo.completed).length}
-    </div>
+    <Todolist todos={todos} toggleTodo={toggleTodo} />
+
   </div>;
 }
 
